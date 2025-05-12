@@ -1,1 +1,1 @@
-#Auto Spell Chrome Extension
+## Auto Spell Chrome Extension
