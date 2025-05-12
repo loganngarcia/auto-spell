@@ -1,0 +1,128 @@
+<!doctype html>
+<html> 
+<head> 
+<title>Spell Bee Options</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/options.css" type="text/css"> 
+<link rel="stylesheet" href="css/jquery.dataTables.min.css" type="text/css"> 
+
+</head> 
+ 
+<body>
+<div id="wrap" class="clearfix">
+ <div id="content_header">
+<h1><img src="../images/icon-38x38.png"/>  Spell Bee!</h1>
+<p>Auto-Corrects as you type !</p>
+</div>
+<div id="content">
+<div class="notification">After making any changes, please refresh the website on which you are using the extension, for the changes to reflect</div>
+  <div class="option">
+	Active : <input type="checkbox" id="isActive" />
+  </div>
+  <div class="option">
+  <table class="myTable">
+  <thead>
+    <tr>
+		<td>Replace</td>
+		<td>With</td>
+		<td><input type="button" id="btnDeleteAll" value="Delete All" /></td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+		<td><input id="txtReplace" type="textbox" placeholder="Typo (No Space allowed)"/></td>
+		<td><input id="txtWith" type="textbox" placeholder="Replace With"/></td>
+		<td><input type="Button" id="btnAdd" value="Add"/></td>
+    </tr>
+  </tfoot>
+  <tbody>
+  </tbody>
+</table>
+  <div id="words-loader" class="loader" style="display:none;"><p class="circle"><span class="ouro"><span class="left"><span class="anim"></span></span><span class="right"><span class="anim"></span></span></span><br/>Loading Wordlist...</p></div>
+  </div>
+  <!--<table cellpadding="0" cellspacing="0" border="0" class="myTable" id="example"></table>-->
+  <div class="option sites">
+  <fieldset>
+		<legend>URLs configuration</legend>
+			<input type="radio" id="blacklist" name="listMode" value="true" /><label>Do <u>NOT</u> auto-correct on the following URLs</label>
+			<input type="radio" id="whitelist" name="listMode" value="false" /><label>Auto-correct <u>ONLY</u> on the following URLs</label>
+	</fieldset>
+  <table class="myIgnoredSites">
+  <thead>
+    <tr>
+		<td>Ignored Website(s)</td>
+		<td class="delete"><input type="button" id="btnDeleteAllWebsites" value="Delete All" /></td>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+		<td><input id="txtIgnoreWebsite" type="textbox" placeholder="Add New Website"/><br/>
+		<p style="font-size: 12px;padding: 0;margin: 0;"><b>Bro Tip:</b> Add website URL from the extension pop-up while browsing website..<p></td>
+		<td style="vertical-align: top;"><input type="Button" id="btnAddWebsite" value="Add"/></td>
+    </tr>
+  </tfoot>
+  <tbody>
+  </tbody>
+</table>
+  </div>
+  <div class="option miscellaneous">
+  <fieldset>
+  <legend>Miscellaneous Options</legend>
+    <ul>
+        <li><input type="checkbox" id="autoCapitalize" /> Auto-Capitalze characters after <input type="text" id="txtAutoCapitalKeys" />.</li>
+		<li><input type="checkbox" id="handleFastCapitalize" /> Auto-correct fast typing capitalization error. <small>(Corrects SPellbee to Spellbee)</small></li>
+        <li>Pause/Unpause extension using ALT + <input type="txtBox" id="txtPauseKey" maxlength="1" style="width:18px"/> key.<br/><small>
+        (Pause is only temporary and lasts only till next page refresh or unpause)</small></li>
+    </ul>
+  </fieldset>
+  </div>
+  <div class="option text-center">
+  <input type="button" id="resetButton" value="Reset"/>
+  <input type="button" id="cancelButton" class="margin-left-20" value="Close"/>
+  </div>
+  <div class="option">
+  <fieldset>
+  <legend>Contact Us</legend>
+	<p>Found a bug? Want to translate into your language? Please leave us an <a href="mailto:browserextensionking@gmail.com" target="_top">E-mail</a></p>
+  </fieldset>
+  </div>
+   <div class="option text-center">
+  <a href="#" id="exportButton" value="Export Settings"><button type="button">Export Settings</button></a>
+  <input type="button" value="Import Settings" class="margin-left-20" id="importButton" />
+  <div id="dvImportSegments" class="fileupload hide">  
+  <br/>
+    <fieldset>
+        <legend>Import Settings</legend>
+			<p>Select a CSV file to import</p>
+			<table class="import-table">
+			<tr>
+			<td><input type="file" name="Import Settings" id="txtFileUpload" accept=".csv" /></td>
+			<td><input type="checkbox" id="exportAppend"/><label>overwrite existing typos ?</label></td>
+			</tr>
+			</table>
+			<div class="text-center padding-20 export-settings">
+			<input type="button" id="btnImport" value="Import !" class="hide"/>
+			<input type="button" id="btnCloseImport" class="margin-left-20" value="Close"/><br/>
+			</div>
+			<label class="import-message hide"></label>
+   </fieldset>
+</div>  
+  <div>
+	<ul>
+	<li>Why Export ? It helps you to save your typo dictionary in case you ever need it later. Or maybe share it with a friend </li>
+	<li>Why Import ? Add hundreds of new typo from a CSV file</li>
+	<li>What's CSV ? It's a comma separated file and would look something like <a href="SpellBee_Import.csv" target="_blank">this</a> and have a .csv file extension.</li>
+	</ul>
+  </div>
+  </div>
+ </div>    
+</div>
+
+<script type="text/javascript" src="js/jquery-2.0.2.min.js"></script> 
+<script type="text/javascript" src="js/analytics.js"></script>
+<script type="text/javascript" src="js/jquery.dataTables.min.js"></script> 
+<script type="text/javascript" src="js/jquery.csv-0.71.min.js"></script> 
+<script type="text/javascript" src="js/options.js"></script> 
+<script type="text/javascript" src="js/options_page.js"></script> 
+</body>
+</html> 
